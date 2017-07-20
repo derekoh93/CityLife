@@ -1,14 +1,4 @@
-// Generated on 2017-07-20 using
-// generator-webapp 1.1.2
-'use strict';
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// If you want to recursively match all subfolders, use:
-// 'test/spec/**/*.js'
-
-// Generated on 2017-04-29 using generator-angular 0.16.0
+// Generated on 2017-05-26 using generator-angular 0.16.0
 'use strict';
 
 // # Globbing
@@ -24,10 +14,10 @@ module.exports = function (grunt) {
 
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
-      useminPrepare: 'grunt-usemin',
-      ngtemplates: 'grunt-angular-templates',
-      cdnify: 'grunt-google-cdn',
-      buildcontrol: 'grunt-build-control'
+    useminPrepare: 'grunt-usemin',
+    ngtemplates: 'grunt-angular-templates',
+    cdnify: 'grunt-google-cdn',
+    buildcontrol: 'grunt-build-control'
   });
 
   // Configurable paths for the application
@@ -39,24 +29,23 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
-        // Project settings
-        yeoman: appConfig,
+    // Project settings
+    yeoman: appConfig,
 
-        buildcontrol: {
-          options: {
-            dir: 'dist',
-            commit: true,
-            push: true,
-            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-          },
-          pages: {
-            options: {
-              remote: 'git@github.com:derekoh93/CityLife.git',
-              branch: 'gh-pages'
-            }
-          }
-        },
-
+    buildcontrol: {
+     options: {
+       dir: 'dist',
+       commit: true,
+       push: true,
+       message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+     },
+     pages: {
+       options: {
+         remote: 'git@github.com:DovDe/shelter-finder-3.git',
+         branch: 'gh-pages'
+       }
+     }
+   },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
