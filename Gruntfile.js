@@ -24,27 +24,30 @@ module.exports = function (grunt) {
     app: 'app',
     dist: 'dist'
   };
+  
+     // Define the configuration for all the tasks
+     grunt.initConfig({
 
-  // Define the configuration for all the tasks
-   grunt.initConfig({
+       // Project settings
+       config: config,
 
-     // Project settings
-     config: config,
-
-     buildcontrol: {
-       options: {
-         dir: 'dist',
-         commit: true,
-         push: true,
-         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-       },
-       pages: {
+       buildcontrol: {
          options: {
-           remote: 'git@github.com:your_github_user/your_webapp.git',
-           branch: 'gh-pages'
+           dir: 'dist',
+           commit: true,
+           push: true,
+           message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+         },
+         pages: {
+           options: {
+             remote: 'git@github.com:your_github_user/your_webapp.git',
+             branch: 'gh-pages'
+           }
          }
-       }
-     },
+       },
+
+       // Watches files for changes and runs tasks based on the changed files
+       watch: {
 
      // Watches files for changes and runs tasks based on the changed files
      watch: {
