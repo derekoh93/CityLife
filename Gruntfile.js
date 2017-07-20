@@ -8,47 +8,55 @@
 // If you want to recursively match all subfolders, use:
 // 'test/spec/**/*.js'
 
+// Generated on 2017-04-29 using generator-angular 0.16.0
+'use strict';
+
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to recursively match all subfolders:
+// 'test/spec/**/*.js'
+
 module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
-  // Automatically load required grunt tasks
+  // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
       useminPrepare: 'grunt-usemin',
+      ngtemplates: 'grunt-angular-templates',
+      cdnify: 'grunt-google-cdn',
       buildcontrol: 'grunt-build-control'
   });
 
-  // Configurable paths
-  var config = {
-    app: 'app',
+  // Configurable paths for the application
+  var appConfig = {
+    app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
 
   // Define the configuration for all the tasks
   grunt.initConfig({
 
-    // Project settings
-    config: config,
+        // Project settings
+        yeoman: appConfig,
 
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:derekoh93/CityLife.git',
-          branch: 'gh-pages'
-        }
-      }
-    },
+        buildcontrol: {
+          options: {
+            dir: 'dist',
+            commit: true,
+            push: true,
+            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+          },
+          pages: {
+            options: {
+              remote: 'git@github.com:derekoh93/CityLife.git',
+              branch: 'gh-pages'
+            }
+          }
+        },
 
-
-     // Watches files for changes and runs tasks based on the changed files
-     watch: {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
